@@ -18,14 +18,14 @@ class ProdutosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.produtos_activity)
         if (savedInstanceState == null) {
-            val produtosFragment: ListaProdutosFragment by inject()
-            transacaoFragment {
-                replace(R.id.container, produtosFragment)
-            }
+//            val produtosFragment: ListaProdutosFragment by inject()
+//            transacaoFragment {
+//                replace(R.id.container, produtosFragment)
+//            }
         }
     }
 
-    override fun onAttachFragment(fragment: Fragment?) {
+    override fun onAttachFragment(fragment: Fragment) {
         super.onAttachFragment(fragment)
         when (fragment) {
             is ListaProdutosFragment -> {
