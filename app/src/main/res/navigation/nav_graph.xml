@@ -54,29 +54,33 @@
         <argument android:name="produtoId"
             app:argType="long" />
     </fragment>
-    <fragment
-        android:id="@+id/login"
-        android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
-        tools:layout="@layout/login"
-        >
-        <action
-            android:id="@+id/action_login_to_listaProdutos"
-            app:destination="@id/listaProdutos"
-            app:popUpTo="@id/login"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_login_to_cadastroUsuario"
-            app:destination="@id/cadastroUsuario" />
-    </fragment>
     <action
         android:id="@+id/action_global_login"
-        app:destination="@id/login"
+        app:destination="@id/login_graph"
         app:popUpTo="@id/listaProdutos"
         app:popUpToInclusive="true" />
-    <fragment
-        android:id="@+id/cadastroUsuario"
-        android:name="br.com.alura.aluraesporte.ui.fragment.CadastroUsuarioFragment"
-        android:label="Cadastro De usuario"
-        tools:layout="@layout/cadastro_usuario"/>
+    <navigation
+        android:id="@+id/login_graph"
+        android:label="Fluxo de Login"
+        app:startDestination="@id/login">
+        <fragment
+            android:id="@+id/login"
+            android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
+            tools:layout="@layout/login">
+            <action
+                android:id="@+id/action_login_to_listaProdutos"
+                app:destination="@id/listaProdutos"
+                app:popUpTo="@id/login"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_login_to_cadastroUsuario"
+                app:destination="@id/cadastroUsuario" />
+        </fragment>
+        <fragment
+            android:id="@+id/cadastroUsuario"
+            android:name="br.com.alura.aluraesporte.ui.fragment.CadastroUsuarioFragment"
+            android:label="Cadastro De usuario"
+            tools:layout="@layout/cadastro_usuario" />
+    </navigation>
 
 </navigation>
