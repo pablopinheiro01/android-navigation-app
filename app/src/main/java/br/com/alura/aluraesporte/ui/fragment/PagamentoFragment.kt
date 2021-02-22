@@ -14,8 +14,10 @@ import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
 import br.com.alura.aluraesporte.model.Pagamento
 import br.com.alura.aluraesporte.model.Produto
 import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
+import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import br.com.alura.aluraesporte.ui.viewmodel.PagamentoViewModel
 import kotlinx.android.synthetic.main.pagamento.*
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val FALHA_AO_CRIAR_PAGAMENTO = "Falha ao criar pagamento"
@@ -36,6 +38,8 @@ class PagamentoFragment : BaseFragment() {
         findNavController()
     }
 
+    private val estadoViewModel: EstadoAppViewModel by sharedViewModel()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,6 +56,7 @@ class PagamentoFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         configuraBotaoConfirmaPagamento()
         buscaProduto()
+        estadoViewModel.temAppBar = true
     }
 
     private fun buscaProduto() {

@@ -16,10 +16,7 @@ import br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment
 import br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment
 import br.com.alura.aluraesporte.ui.fragment.PagamentoFragment
 import br.com.alura.aluraesporte.ui.recyclerview.adapter.ProdutosAdapter
-import br.com.alura.aluraesporte.ui.viewmodel.DetalhesProdutoViewModel
-import br.com.alura.aluraesporte.ui.viewmodel.LoginViewModel
-import br.com.alura.aluraesporte.ui.viewmodel.PagamentoViewModel
-import br.com.alura.aluraesporte.ui.viewmodel.ProdutosViewModel
+import br.com.alura.aluraesporte.ui.viewmodel.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -95,4 +92,6 @@ val viewModelModule = module {
     viewModel<DetalhesProdutoViewModel> { (id: Long) -> DetalhesProdutoViewModel(id, get()) }
     viewModel<PagamentoViewModel> { PagamentoViewModel(get(), get()) }
     viewModel<LoginViewModel> { LoginViewModel(get())  }
+    //nao possui nenhum argumento
+    viewModel<EstadoAppViewModel>{EstadoAppViewModel()}
 }

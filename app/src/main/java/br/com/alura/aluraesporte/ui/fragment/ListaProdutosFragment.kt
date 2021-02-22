@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.model.Produto
 import br.com.alura.aluraesporte.ui.recyclerview.adapter.ProdutosAdapter
+import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import br.com.alura.aluraesporte.ui.viewmodel.ProdutosViewModel
 import kotlinx.android.synthetic.main.lista_produtos.*
 import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class ListaProdutosFragment : BaseFragment() {
@@ -22,6 +24,10 @@ class ListaProdutosFragment : BaseFragment() {
         findNavController()
     }
 
+    //aqui vai ser diferente, devemos apontar para a referencia da activity,
+    //vamos usar a sharedViewModel que é proprio do Koin, que é um viewModel compartilhado
+    //que foi criado a partir da activity
+    private val appViewModel: EstadoAppViewModel by sharedViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +56,7 @@ class ListaProdutosFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        appViewModel.temAppBar = true
         configuraRecyclerView()
     }
 
