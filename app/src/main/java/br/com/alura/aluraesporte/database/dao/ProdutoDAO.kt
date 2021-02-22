@@ -18,4 +18,5 @@ interface ProdutoDAO {
     @Query("SELECT * FROM Produto WHERE id = :id")
     fun buscaPorId(id: Long): LiveData<Produto>
 
+
 }

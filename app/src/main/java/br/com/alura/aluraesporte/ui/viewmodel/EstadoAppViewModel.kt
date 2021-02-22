@@ -6,25 +6,24 @@ import androidx.lifecycle.ViewModel
 
 class EstadoAppViewModel: ViewModel() {
     //para acessos externos
-    val appBar: LiveData<Boolean> get() = _appBar
+    val appBar: LiveData<ComponentesVisuais> get() = _componentes
 
     //so pode ser alterado pela propria classe
-    private var _appBar: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
+    private var _componentes: MutableLiveData<ComponentesVisuais> = MutableLiveData<ComponentesVisuais>()
         //funcao devolve o valor que ela mesma vai alterar
         .also{
-        it.value = temAppBar
+        it.value = temComponentes
     }
 
-    var temAppBar: Boolean = false
+    var temComponentes: ComponentesVisuais = ComponentesVisuais()
     set(value){
         field = value
-        _appBar.value = value
+        _componentes.value = value
     }
-
-    fun configuraAppBar(valor: Boolean){
-        _appBar.value = valor
-    }
-
-
 
 }
+
+class ComponentesVisuais(
+    val appBar: Boolean = false,
+    val bottomNavigation: Boolean = false
+)

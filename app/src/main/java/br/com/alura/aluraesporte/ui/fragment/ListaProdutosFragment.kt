@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.model.Produto
 import br.com.alura.aluraesporte.ui.recyclerview.adapter.ProdutosAdapter
+import br.com.alura.aluraesporte.ui.viewmodel.ComponentesVisuais
 import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import br.com.alura.aluraesporte.ui.viewmodel.ProdutosViewModel
 import kotlinx.android.synthetic.main.lista_produtos.*
@@ -31,8 +32,8 @@ class ListaProdutosFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setHasOptionsMenu(true)
         buscaProdutos()
-        setHasOptionsMenu(true)
     }
 
     private fun buscaProdutos() {
@@ -56,7 +57,7 @@ class ListaProdutosFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        appViewModel.temAppBar = true
+        appViewModel.temComponentes = ComponentesVisuais(true, true)
         configuraRecyclerView()
     }
 
@@ -76,9 +77,9 @@ class ListaProdutosFragment : BaseFragment() {
         controlador.navigate(direcao)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.menu_principal_deslogar, menu)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater?.inflate(R.menu.menu_principal_deslogar, menu)
+//    }
 
 }
