@@ -13,7 +13,11 @@
         >
         <action
             android:id="@+id/action_listaProdutos_to_detalhesProduto"
-            app:destination="@id/detalhesProduto" />
+            app:destination="@id/detalhesProduto"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment android:id="@+id/detalhesProduto"
@@ -23,7 +27,11 @@
         >
         <action
             android:id="@+id/action_detalhesProduto_to_pagamento"
-            app:destination="@id/pagamento" />
+            app:destination="@id/pagamento"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
             android:name="produtoId"
             app:argType="long" />
@@ -37,7 +45,10 @@
         <action
             android:id="@+id/action_pagamento_to_listaProdutos"
             app:destination="@id/listaProdutos"
-            app:popExitAnim="@anim/fragment_fade_exit"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/listaProdutos" />
         <argument android:name="produtoId"
             app:argType="long" />
