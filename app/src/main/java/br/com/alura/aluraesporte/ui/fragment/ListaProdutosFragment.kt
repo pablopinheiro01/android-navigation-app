@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.model.Produto
-import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
 import br.com.alura.aluraesporte.ui.recyclerview.adapter.ProdutosAdapter
 import br.com.alura.aluraesporte.ui.viewmodel.ProdutosViewModel
 import kotlinx.android.synthetic.main.lista_produtos.*
@@ -68,9 +67,9 @@ class ListaProdutosFragment : Fragment() {
         /*val bundle = Bundle()
         bundle.putLong(CHAVE_PRODUTO_ID, produtoSelecionado.id)*/
         // as direcoes substituem os bundles e conseguimos enviar os dados atraves das definicoes feitas no nav_graph
-        val direcoes =
+        val direcao =
             ListaProdutosFragmentDirections.actionListaProdutosToDetalhesProduto(produtoId = produtoSelecionado.id)
-        controlador.navigate(direcoes)
+        controlador.navigate(direcao)
     }
 
 }

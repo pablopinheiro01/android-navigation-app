@@ -39,6 +39,8 @@
             app:destination="@id/listaProdutos"
             app:popExitAnim="@anim/fragment_fade_exit"
             app:popUpTo="@id/listaProdutos" />
+        <argument android:name="produtoId"
+            app:argType="long" />
     </fragment>
 
 </navigation>
