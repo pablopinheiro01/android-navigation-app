@@ -22,8 +22,6 @@ class DetalhesProdutoFragment : Fragment() {
     private val argumentos by navArgs<DetalhesProdutoFragmentArgs>()
 
     private val produtoId by lazy {
-//        arguments?.getLong(CHAVE_PRODUTO_ID)
-//            ?: throw IllegalArgumentException(ID_PRODUTO_INVALIDO)
         argumentos.produtoId
     }
     private val viewModel: DetalhesProdutoViewModel by viewModel { parametersOf(produtoId) }
