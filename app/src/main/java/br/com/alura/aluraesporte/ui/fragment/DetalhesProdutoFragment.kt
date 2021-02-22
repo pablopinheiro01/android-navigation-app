@@ -93,7 +93,7 @@ class DetalhesProdutoFragment : Fragment() {
     }
 
     private fun vaiParaLogin() {
-        val direcao = DetalhesProdutoFragmentDirections.actionDetalhesProdutoToLogin()
+        val direcao = DetalhesProdutoFragmentDirections.actionGlobalLogin()
         controlador.navigate(direcao)
     }
 
