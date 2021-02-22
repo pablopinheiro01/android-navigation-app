@@ -40,6 +40,11 @@
         <argument
             android:name="produtoId"
             app:argType="long" />
+        <action
+            android:id="@+id/action_detalhesProduto_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/listaProdutos"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment android:id="@+id/pagamento"
