@@ -22,13 +22,11 @@ private const val FALHA_AO_CRIAR_PAGAMENTO = "Falha ao criar pagamento"
 private const val COMPRA_REALIZADA = "Compra realizada"
 
 
-class PagamentoFragment : Fragment() {
+class PagamentoFragment : BaseFragment() {
 
     private val argumentos by navArgs<PagamentoFragmentArgs>()
 
     private val produtoId by lazy {
-//        arguments?.getLong(CHAVE_PRODUTO_ID)
-//            ?: throw IllegalArgumentException(ID_PRODUTO_INVALIDO)
         argumentos.produtoId
 
     }
