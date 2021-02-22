@@ -65,9 +65,12 @@ class ListaProdutosFragment : Fragment() {
     }
 
     private fun vaiParaDetalhesDoProduto(produtoSelecionado: Produto) {
-        val bundle = Bundle()
-        bundle.putLong(CHAVE_PRODUTO_ID, produtoSelecionado.id)
-        controlador.navigate(R.id.action_listaProdutos_to_detalhesProduto, bundle)
+        /*val bundle = Bundle()
+        bundle.putLong(CHAVE_PRODUTO_ID, produtoSelecionado.id)*/
+        // as direcoes substituem os bundles e conseguimos enviar os dados atraves das definicoes feitas no nav_graph
+        val direcoes =
+            ListaProdutosFragmentDirections.actionListaProdutosToDetalhesProduto(produtoId = produtoSelecionado.id)
+        controlador.navigate(direcoes)
     }
 
 }
