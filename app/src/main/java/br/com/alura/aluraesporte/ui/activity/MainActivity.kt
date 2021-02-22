@@ -5,8 +5,12 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import br.com.alura.aluraesporte.R
+import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel: EstadoAppViewModel by viewModel()
 
     private val controlador by lazy {
         findNavController(R.id.main_activity_nav_host)
@@ -28,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             when(destination.id){
                 R.id.listaProdutos -> supportActionBar?.show()
                 R.id.login -> supportActionBar?.hide()
+                R.id.cadastroUsuario -> supportActionBar?.show()
             }
         }
     }
